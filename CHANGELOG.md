@@ -7,9 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.1.1] - 2023-08-18
-
 ### Added
+
+### Fixed
+
+- Fix function name `make_heat_map_of_consistent()`
+
+### Changed
+
+### Removed
+
+## [0.1.1] - 2023-08-18
 
 ### Fixed
 
@@ -19,8 +27,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Move plot functions to internal module
-
-### Removed
 
 ## [0.1.0] - 2023-08-19
 
