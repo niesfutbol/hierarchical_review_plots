@@ -2,4 +2,3 @@ altair
 pandas
 plotly
 streamlit
-vega-datasets

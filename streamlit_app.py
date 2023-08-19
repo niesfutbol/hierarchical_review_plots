@@ -12,29 +12,10 @@ radar_player = "J. Musiala"
 
 fig = hrp.make_bar_plot_player(larga, radar_player)
 
-league, team, player = st.tabs(["League", "Team", "Player"])
-
-with league:
-    st.subheader("Gráficas de desempeño")
-    """
-    Estas gráficas tienen un conjunto de métricas seleccionadas a partir de técnicas de inteligencia artificial.
-    Cada barra representa la fuerza relativa del jugador en cada una de las métricas.
-    La distancia que existe de la barra al centro indica el percentil comparado con la base de datos completa.
-
-    La descripción completa la encontrarás en la entrada [Gráfica de desempeño de jugadores](https://www.nies.futbol/2023/07/grafica-de-desempeno-de-jugadores.html).
-    """
-    st.plotly_chart(fig)
+team, player = st.tabs(["Team", "Player"])
 
 with team:
-    st.subheader("Gráficas de consistencia")
-    """
-    En la figura de abajo mostramos un mapa de calor.
-    En los renglones podemos ver a los jugadores del equipo (incluyendo a los sustitutos).
-    Las columnas corresponden a los partidos disputados.
-    Así, el color de cada cuadro representa los minutos disputados en un partido por cada jugador.
-
-    La descripción completa la encontrarás en la entrada [Consistencia en las alineaciones](https://www.nies.futbol/2023/08/consistencia-en-las-alineaciones-la.html).
-    """
+    st.subheader("Mapa de calor")
     teams = ["Cimarrones", "Cancún", "Mineros de Zacatecas"]
     colours = {"Cimarrones": "oranges", "Cancún": "blues", "Mineros de Zacatecas": "reds"}
     team = st.selectbox("Selecciona un equipo:", teams)
@@ -47,13 +28,6 @@ with team:
 
 with player:
     st.subheader("Gráficas de desempeño")
-    """
-    Estas gráficas tienen un conjunto de métricas seleccionadas a partir de técnicas de inteligencia artificial.
-    Cada barra representa la fuerza relativa del jugador en cada una de las métricas.
-    La distancia que existe de la barra al centro indica el percentil comparado con la base de datos completa.
-
-    La descripción completa la encontrarás en la entrada [Gráfica de desempeño de jugadores](https://www.nies.futbol/2023/07/grafica-de-desempeno-de-jugadores.html).
-    """
     fig = hrp.add_nies_logo(fig)
     st.plotly_chart(fig)
 
