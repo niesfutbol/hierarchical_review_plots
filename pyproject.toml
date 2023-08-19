@@ -11,6 +11,7 @@ home-page = "https://github.com/niesfutbol/hierarchical_review_plots"
 module = "hierarchical_review_plots"
 requires = [
 	"altair",
+	"Imag",
 	"plotly",
 ]
 requires-python=">=3.9"
