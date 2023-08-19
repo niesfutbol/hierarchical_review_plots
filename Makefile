@@ -13,9 +13,8 @@ all: check coverage mutants
 		setup \
 		tests
 
-module = streamlit_nies
-codecov_token = ba9f5840-913c-4257-a2e9-a2ab4eca1082
-
+module = hierarchical_review_plots
+codecov_token = ba79a0f4-1eb4-4096-af83-22a38a506e6f
 
 define lint
 	pylint \

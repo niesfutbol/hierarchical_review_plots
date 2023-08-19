@@ -4,7 +4,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: nepolin/streamlit_nies:latest
+    image: nepolin/hierarchical_review_plots:latest
     command: bash
     volumes:
       - $PWD:/workdir
@@ -12,7 +12,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: nepolin/streamlit_nies:latest
+    image: nepolin/hierarchical_review_plots:latest
     entrypoint: ["streamlit", "run", "streamlit_app.py", "--server.port=8501", "--server.address=0.0.0.0"]
     volumes:
       - $PWD:/workdir

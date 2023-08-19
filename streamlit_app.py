@@ -2,7 +2,7 @@ import altair as alt
 import pandas as pd
 import plotly.express as px
 import streamlit as st
-import streamlit_nies as sn
+import hierarchical_review_plots as hrp
 
 
 larga = pd.read_csv("static/larga_player.csv")
@@ -10,7 +10,7 @@ data = pd.read_csv("static/played_minutes.csv")
 # ----------------- game start --------
 radar_player = "J. Musiala"
 
-fig = sn.make_bar_plot_player(larga, radar_player)
+fig = hrp.make_bar_plot_player(larga, radar_player)
 
 league, team, player = st.tabs(["League", "Team", "Player"])
 
@@ -42,7 +42,7 @@ with team:
     played_minutes = data[data.team == team]
 
     # Crear el gráfico de Altair
-    hm_consistent = sn.make_heat_map_of_sonsistent(data, team, color)
+    hm_consistent = hrp.make_heat_map_of_sonsistent(data, team, color)
     st.altair_chart(hm_consistent)
 
 with player:
@@ -54,7 +54,7 @@ with player:
 
     La descripción completa la encontrarás en la entrada [Gráfica de desempeño de jugadores](https://www.nies.futbol/2023/07/grafica-de-desempeno-de-jugadores.html).
     """
-    fig = sn.add_nies_logo(fig)
+    fig = hrp.add_nies_logo(fig)
     st.plotly_chart(fig)
 
 

@@ -1,4 +1,4 @@
-import streamlit_nies as dt
+import hierarchical_review_plots as dt
 
 
 def test_add_offset():
