@@ -29,7 +29,14 @@ with player:
     minutes_played = 123
     scotland_logo = "logo_cinch_premiership"
     ac_milan_logo = "logo_489"
-    fig = hrp.make_bar_plot_player(larga, radar_player, minutes_played, team, league_logo = scotland_logo, team_logo = ac_milan_logo)
+    fig = hrp.make_bar_plot_player(
+        larga,
+        radar_player,
+        minutes_played,
+        team,
+        league_logo=scotland_logo,
+        team_logo=ac_milan_logo,
+    )
     st.plotly_chart(fig)
 
 
