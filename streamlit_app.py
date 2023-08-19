@@ -5,12 +5,8 @@ import streamlit as st
 import hierarchical_review_plots as hrp
 
 
-larga = pd.read_csv("static/larga_player.csv")
 data = pd.read_csv("static/played_minutes.csv")
 # ----------------- game start --------
-radar_player = "J. Musiala"
-
-fig = hrp.make_bar_plot_player(larga, radar_player)
 
 team, player = st.tabs(["Team", "Player"])
 
@@ -23,12 +19,17 @@ with team:
     played_minutes = data[data.team == team]
 
     # Crear el gráfico de Altair
-    hm_consistent = hrp.make_heat_map_of_sonsistent(data, team, color)
+    hm_consistent = hrp.make_heat_map_of_consistent(data, team, color)
     st.altair_chart(hm_consistent)
 
 with player:
     st.subheader("Gráficas de desempeño")
-    fig = hrp.add_nies_logo(fig)
+    radar_player = "J. Musiala"
+    larga = pd.read_csv("static/larga_player.csv")
+    minutes_played = 123
+    scotland_logo = "logo_cinch_premiership"
+    ac_milan_logo = "logo_489"
+    fig = hrp.make_bar_plot_player(larga, radar_player, minutes_played, team, league_logo = scotland_logo, team_logo = ac_milan_logo)
     st.plotly_chart(fig)
 
 
