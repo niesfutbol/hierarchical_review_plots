@@ -1,7 +1,7 @@
 import altair as alt
 
 
-def make_heat_map_of_sonsistent(data, team, color):
+def make_heat_map_of_consistent(data, team, color):
     played_minutes = data[data.team == team]
     chart = (
         alt.Chart(played_minutes, title=f"Minutes Played by Player and Match: \n{team}")
