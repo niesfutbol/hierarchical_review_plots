@@ -2,14 +2,14 @@
 src="https://raw.githubusercontent.com/niesfutbol/hierarchical_review_plots/develop/static/logo_nies.png" align="right" width="256"
 /></a>
 
-# Template for Streamlit projects
+# Module of hierarchical review plots
 
 ## Step to use
 ### Local app
 ``` sh
-docker-compose up app
+docker-compose up -d app
 ```
-### Develop Enviroment
+### Develop Environment
 ``` sh
 docker-compose run nies
 ```
