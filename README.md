@@ -9,6 +9,7 @@ src="https://raw.githubusercontent.com/niesfutbol/hierarchical_review_plots/deve
 ``` sh
 docker-compose up -d app
 ```
+Open http://localhost:8101/
 ### Develop Environment
 ``` sh
 docker-compose run nies

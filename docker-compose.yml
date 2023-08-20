@@ -13,8 +13,8 @@ services:
       context: .
       dockerfile: Dockerfile
     image: nepolin/hierarchical_review_plots:latest
-    entrypoint: ["streamlit", "run", "streamlit_app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+    entrypoint: ["streamlit", "run", "streamlit_app.py", "--server.port=8101", "--server.address=0.0.0.0"]
     volumes:
       - $PWD:/workdir
     ports:
-      - "8501:8501"
+      - "8101:8101"
