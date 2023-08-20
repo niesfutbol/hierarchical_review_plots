@@ -21,6 +21,10 @@ with team:
     # Crear el gráfico de Altair
     hm_consistent = hrp.make_heat_map_of_consistent(data, team, color)
     st.altair_chart(hm_consistent)
+    weighted = pd.read_csv("static/weighted_g_and_xg_94.csv")
+    weight_plot = hrp.make_weighted(weighted)
+
+    st.plotly_chart(weight_plot, use_container_width=True)
 
 with player:
     st.subheader("Gráficas de desempeño")
