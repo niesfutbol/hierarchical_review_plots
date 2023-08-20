@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.1.2] - 2023-08-19
+## [0.1.3] - 2023-08-19
 
 ### Added
 
@@ -22,6 +22,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Change port from 8501 to 8101
 ### Removed
+
+## [0.1.2] - 2023-08-19
+
+### Added
+
+- Update function `make_bar_plot_player()`
+
+### Fixed
+
+- Fix function name `make_heat_map_of_consistent()`
 
 ## [0.1.1] - 2023-08-18
 
@@ -40,5 +50,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add instructions to run app and develop environments.
 
+[0.1.3]: https://github.com/niesfutbol/hierarchical_review_plots/compare/v0.1.2...v0.1.3
 [0.1.2]: https://github.com/niesfutbol/hierarchical_review_plots/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/niesfutbol/hierarchical_review_plots/compare/v0.1.0...v0.1.1
