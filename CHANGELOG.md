@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Update function `make_bar_plot_player()`
+- Update function `make_weighted()`
 
 ### Fixed
 
@@ -19,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Change port from 8501 to 8101
 ### Removed
 
 ## [0.1.1] - 2023-08-18
