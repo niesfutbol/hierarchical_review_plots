@@ -18,13 +18,18 @@ with team:
     color = colours[team]
     played_minutes = data[data.team == team]
 
-    # Crear el gráfico de Altair
+    # Consistency heat map with Altair
     hm_consistent = hrp.make_heat_map_of_consistent(data, team, color)
     st.altair_chart(hm_consistent)
+    # Weighted xG with Plotly
     weighted = pd.read_csv("static/weighted_g_and_xg_94.csv")
     weight_plot = hrp.make_weighted(weighted)
-
     st.plotly_chart(weight_plot, use_container_width=True)
+    # Tilt, PPDA, and Build-up Disruption with Altair
+    tilt_ppda = pd.read_csv("static/xG_build-up_ppda_tilt_94.csv")
+    options = hrp.select_pression_index()
+    ppda_plot = hrp.make_tilt_ppda_build_up_disruption(tilt_ppda, options)
+    st.altair_chart(ppda_plot)
 
 with player:
     st.subheader("Gráficas de desempeño")
