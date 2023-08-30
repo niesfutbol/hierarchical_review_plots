@@ -84,6 +84,6 @@ def _update_bar_polar(fig):
         polar_angularaxis_rotation=90,
         polar_angularaxis_direction="clockwise",
         polar_radialaxis_dtick=10,
-        polar_hole=0.10,
+        polar_hole=0.30,
     )
     return fig
