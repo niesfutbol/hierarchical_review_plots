@@ -8,6 +8,12 @@ def make_bar_plot_player(larga, radar_player, minutes_played, team, league_logo,
     return add_nies_logo(fig, league_logo, team_logo)
 
 
+def make_bar_plot_player_2(larga, radar_player, minutes_played, team, league_logo, team_logo):
+    fig = _set_up_bar_polar_2(larga, radar_player, minutes_played, team)
+    fig = _update_bar_polar(fig)
+    return add_nies_logo(fig, league_logo, team_logo)
+
+
 def add_nies_logo(fig, league_logo: str, team_logo: str):
     fig.add_layout_image(
         dict(
@@ -50,6 +56,17 @@ def _set_up_bar_polar(larga, radar_player, minutes_played, team):
     player_t = larga[larga.Player == radar_player]
     fig = px.bar_polar(
         player_t,
+        r="deciles",
+        theta="variable",
+        color="type_variable",
+        title=f"{radar_player}, {team} ({minutes_played} minutes played)",
+    )
+    return fig
+
+
+def _set_up_bar_polar_2(larga, radar_player, minutes_played, team):
+    fig = px.bar_polar(
+        larga,
         r="deciles",
         theta="variable",
         color="type_variable",

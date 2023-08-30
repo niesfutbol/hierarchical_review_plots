@@ -48,5 +48,16 @@ with player:
     )
     st.plotly_chart(fig)
 
+    player_t = larga[larga.Player == radar_player]
+    fig_2 = hrp.make_bar_plot_player_2(
+        player_t,
+        radar_player,
+        minutes_played,
+        team,
+        league_logo=scotland_logo,
+        team_logo=ac_milan_logo,
+    )
+    st.plotly_chart(fig_2)
+
 
 st.markdown("Made with 💖 by [nies.futbol](https://nies.futbol)")
