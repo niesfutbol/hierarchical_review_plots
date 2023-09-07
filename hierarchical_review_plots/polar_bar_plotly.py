@@ -79,7 +79,8 @@ def _update_bar_polar(fig):
     fig.update_traces(showlegend=True)
     fig.update_polars(
         radialaxis_showticklabels=True,
-        angularaxis_griddash="dash"
+        angularaxis_griddash="dash",
+        angularaxis_showline=False
     )
     fig.update_layout(
         legend_title_text="Game phase",
