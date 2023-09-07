@@ -77,7 +77,10 @@ def _set_up_bar_polar_2(larga, radar_player, minutes_played, team):
 
 def _update_bar_polar(fig):
     fig.update_traces(showlegend=True)
-    fig.update_polars(radialaxis_showticklabels=True)
+    fig.update_polars(
+        radialaxis_showticklabels=True,
+        angularaxis_griddash="dash"
+    )
     fig.update_layout(
         legend_title_text="Game phase",
         polar_radialaxis_ticksuffix="",
