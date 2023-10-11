@@ -1,5 +1,5 @@
-import altair as alt
 import pandas as pd
+import numpy as np
 import plotly.express as px
 import streamlit as st
 import hierarchical_review_plots as hrp
@@ -8,7 +8,7 @@ import hierarchical_review_plots as hrp
 data = pd.read_csv("static/played_minutes.csv")
 # ----------------- game start --------
 
-team, player = st.tabs(["Team", "Player"])
+team, player, groups = st.tabs(["Team", "Player", "Groups"])
 
 with team:
     st.subheader("Mapa de calor")
@@ -58,6 +58,22 @@ with player:
         team_logo=ac_milan_logo,
     )
     st.plotly_chart(fig_2)
+
+
+df = pd.read_csv("static/champions_team_values.csv")
+with groups:
+    fig = px.treemap(df, path=[px.Constant("Champions"), 'group', 'Team'], values='market_value',
+                  color_continuous_scale='RdBu',
+                  color_continuous_midpoint=np.average(df['market_value'], weights=df['market_value']))
+    fig.update_layout(margin = dict(t=50, l=25, r=25, b=25))
+    st.plotly_chart(fig)
+    
+    fig_is = px.treemap(df, path=[px.Constant("Paridad en la Champions"), 'group', 'Team'], values='p2',
+                  color='market_value',
+                  color_continuous_scale='RdBu',
+                  color_continuous_midpoint=np.average(df['market_value'], weights=df['market_value']))
+    fig_is.update_layout(margin = dict(t=50, l=25, r=25, b=25))
+    st.plotly_chart(fig_is)
 
 
 st.markdown("Made with 💖 by [nies.futbol](https://nies.futbol)")
