@@ -37,7 +37,7 @@ def make_quality_and_pressure_indexes(tilt_ppda, xcol_param):
         .encode(
             x=alt.X("x:Q").title(""),
             y="xG:Q",
-            tooltip=["team", "xG", "tilt", "build_up_disruption", "ppda"],
+            tooltip=["name", "xG", "tilt", "build_up_disruption", "ppda"],
         )
         .transform_calculate(x=f"datum[{xcol_param.name}]")
         .add_params(xcol_param)
