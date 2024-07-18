@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.6] - 2024-07-17
+
+### Added
+
+- Add function `make_quality_and_pressure_indexes()`
+
+### Fixed
+
+### Changed
+
+
 ## [0.1.5] - 2023-08-29
 
 ### Added
@@ -65,6 +76,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add instructions to run app and develop environments.
 
+[0.1.6]: https://github.com/niesfutbol/hierarchical_review_plots/compare/v0.1.5...v0.1.6
 [0.1.5]: https://github.com/niesfutbol/hierarchical_review_plots/compare/v0.1.4...v0.1.5
 [0.1.4]: https://github.com/niesfutbol/hierarchical_review_plots/compare/v0.1.3...v0.1.4
 [0.1.3]: https://github.com/niesfutbol/hierarchical_review_plots/compare/v0.1.2...v0.1.3
