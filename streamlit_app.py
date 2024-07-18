@@ -62,17 +62,25 @@ with player:
 
 df = pd.read_csv("static/champions_team_values.csv")
 with groups:
-    fig = px.treemap(df, path=[px.Constant("Champions"), 'group', 'Team'], values='market_value',
-                  color_continuous_scale='RdBu',
-                  color_continuous_midpoint=np.average(df['market_value'], weights=df['market_value']))
-    fig.update_layout(margin = dict(t=50, l=25, r=25, b=25))
+    fig = px.treemap(
+        df,
+        path=[px.Constant("Champions"), "group", "Team"],
+        values="market_value",
+        color_continuous_scale="RdBu",
+        color_continuous_midpoint=np.average(df["market_value"], weights=df["market_value"]),
+    )
+    fig.update_layout(margin=dict(t=50, l=25, r=25, b=25))
     st.plotly_chart(fig)
-    
-    fig_is = px.treemap(df, path=[px.Constant("Paridad en la Champions"), 'group', 'Team'], values='p2',
-                  color='market_value',
-                  color_continuous_scale='RdBu',
-                  color_continuous_midpoint=np.average(df['market_value'], weights=df['market_value']))
-    fig_is.update_layout(margin = dict(t=50, l=25, r=25, b=25))
+
+    fig_is = px.treemap(
+        df,
+        path=[px.Constant("Paridad en la Champions"), "group", "Team"],
+        values="p2",
+        color="market_value",
+        color_continuous_scale="RdBu",
+        color_continuous_midpoint=np.average(df["market_value"], weights=df["market_value"]),
+    )
+    fig_is.update_layout(margin=dict(t=50, l=25, r=25, b=25))
     st.plotly_chart(fig_is)
 
 
